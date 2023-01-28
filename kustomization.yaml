@@ -5,3 +5,4 @@ namespace: simple-webapp-blue
 resources:
   - deployment.yaml
   - service.yaml
+  - deployment-green.yaml
