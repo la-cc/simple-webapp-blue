@@ -13,7 +13,7 @@ spec:
         app: simple-webapp-blue
     spec:
       containers:
-        - image: "ghcr.io/la-cc/simple-webapp:1.0.0"
+        - image: "ghcr.io/la-cc/simple-webapp:1.0.1"
           name: simple-webapp-blue
           env:
           - name: APP_COLOR
