@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-webapp-blue
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: simple-webapp-blue
+  template:
+    metadata:
+      labels:
+        app: simple-webapp-blue
+    spec:
+      containers:
+        - image: "ghcr.io/la-cc/simple-webapp:1.0.1"
+          name: simple-webapp-blue
+          env:
+          - name: APP_COLOR
+            value: "blue"
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 8080
+      securityContext:
+        runAsUser: 1000
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
