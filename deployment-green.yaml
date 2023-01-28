@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: simple-webapp-green
-  name: simple-webapp-green
+  namespace: simple-webapp-green
 spec:
   replicas: 2
   selector:
